@@ -1,33 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cherica <cherica@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/09 21:28:14 by cherica           #+#    #+#             */
+/*   Updated: 2026/02/09 21:35:59 by cherica          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_atoi(const char *str)
 {
 	int	i;
-	int	sign;
-	int	result;
+	int	is_neg;
+	int	res;
 
+	if (!str)
+		return (0);
 	i = 0;
-	sign = 1;
-	result = 0;
-
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
-		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
+		|| str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
 		i++;
-
-	
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sign = -1;
+	is_neg = 1;
+	if (str[i] == '-')
+		is_neg = -1;
+	if (is_neg == -1 || str[i] == '+')
 		i++;
-	}
-
-	
+	res = 0;
 	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-
-	return (result * sign);
+		res = (res * 10) + (str[i++] - '0');
+	return (res * is_neg);
 }

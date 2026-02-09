@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cherica <cherica@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 20:05:17 by ncolomer          #+#    #+#             */
-/*   Updated: 2019/11/12 19:56:48 by ncolomer         ###   ########.fr       */
+/*   Updated: 2026/02/09 21:59:40 by cherica          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ t_list
 {
 	t_list	*elt;
 
-	if (!(elt = (t_list*)malloc(sizeof(*elt))))
+	elt = (t_list *)malloc(sizeof(*elt));
+	if (!elt)
 		return (NULL);
 	elt->content = content;
 	elt->next = NULL;
