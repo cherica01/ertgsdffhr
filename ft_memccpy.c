@@ -6,14 +6,13 @@
 /*   By: cherica <cherica@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 12:24:10 by ncolomer          #+#    #+#             */
-/*   Updated: 2026/02/09 22:01:30 by cherica          ###   ########.fr       */
+/*   Updated: 2026/02/17 08:24:34 by cherica          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void
-	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	size_t	i;
 
